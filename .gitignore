@@ -1,0 +1,7 @@
+node_modules
+dist
+*.log
+static
+webpack.config.js
+server.js
+.npmignore
