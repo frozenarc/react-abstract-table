@@ -1,7 +1,7 @@
 # react-abstract-table
 Abstract table to extend whatever way
 
-The abstract table still needs below sub-module to make itself concrete. The table is flexible enough to accept independent implementation of each.
+The abstract table still needs below sub-modules to make itself concrete. The table is flexible enough to accept independent implementation of each.
 
 Rendering: You can use any kind of element or library to render like `<td>`, `<div>`, semantic-ui-react, bootstrap etc.
 
@@ -26,13 +26,13 @@ const renderTable = (children, table) => {
 ```
 #### Parameters
 
-children: Array containing table header and table body element to render as a children of table.
-table: Object with functions to get or set state of some component. The object has below functions.
+* children: Array containing table header and table body element to render as a children of table.
+* table: Object with functions to get or set state of some component. The object has below functions.
 
 ##### Functions of `table`
 
-setState: table component's setState.
-getState: returns state of table component.
+* setState: table component's setState.
+* getState: returns state of table component.
 
 #### Function
 
@@ -43,14 +43,14 @@ const renderTableBody = (children, tableBody) => {
 ```
 #### Parameters
 
-children: table row elements to render as a children of table body.
-tableBody: The object has below functions.
+* children: table row elements to render as a children of table body.
+* tableBody: The object has below functions.
 
 ##### Functions of `tableBody`
 
-setState: table body component's setState.
-getState: returns state of table body component.
-getTable: returns `table` object to call `setState` or `getState` on it.
+* setState: table body component's setState.
+* getState: returns state of table body component.
+* getTable: returns `table` object to call `setState` or `getState` on it.
 
 #### Function
 
@@ -61,16 +61,16 @@ const renderTableRow = (rowIdx, children, tableRow) => {
 ```
 #### Parameters
 
-rowIdx: Current row index of rendering row.
-children: table cell elements to render as a children of table row.
-tableRow: The object has below functions.
+* rowIdx: Current row index of rendering row.
+* children: table cell elements to render as a children of table row.
+* tableRow: The object has below functions.
 
 ##### Functions of `tableRow`
 
-setState: table row component's setState.
-getState: returns state of table row component.
-getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
-getTable: returns `table` object to call `setState` or `getState` on it.
+* setState: table row component's setState.
+* getState: returns state of table row component.
+* getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
+* getTable: returns `table` object to call `setState` or `getState` on it.
 
 #### Function
 
@@ -81,17 +81,17 @@ const renderTableCell = (rowIdx, colIdx, tableCell) => {
 ```
 #### Parameters
 
-rowIdx: Current row index of rendering cell.
-colIdx: Current column index of rendering cell.
-tableCell: The object has below functions.
+* rowIdx: Current row index of rendering cell.
+* colIdx: Current column index of rendering cell.
+* tableCell: The object has below functions.
 
 ##### Functions of `tableCell`
 
-setState: table cell component's setState.
-getState: returns state of table cell component.
-getTableRow: returns `tableRow` object to call `setState` or `getState` on it.
-getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
-getTable: returns `table` object to call `setState` or `getState` on it.
+* setState: table cell component's setState.
+* getState: returns state of table cell component.
+* getTableRow: returns `tableRow` object to call `setState` or `getState` on it.
+* getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
+* getTable: returns `table` object to call `setState` or `getState` on it.
 
 #### Function
 
@@ -102,14 +102,14 @@ const renderTableHeader = (children, tableHeader) => {
 ```
 #### Parameters
 
-children: table header row elements to render as a children of table header.
-tableHeader: The object has below functions.
+* children: table header row elements to render as a children of table header.
+* tableHeader: The object has below functions.
 
 ##### Functions of `tableHeader`
 
-setState: table header component's setState.
-getState: returns state of table header component.
-getTable: returns `table` object to call `setState` or `getState` on it.
+* setState: table header component's setState.
+* getState: returns state of table header component.
+* getTable: returns `table` object to call `setState` or `getState` on it.
 
 #### Function
 
@@ -120,16 +120,16 @@ const renderTableHeaderRow = (rowIdx, children, tableHeaderRow) => {
 ```
 #### Parameters
 
-rowIdx: Current row index of rendering row.
-children: table header cell elements to render as a children of table header.
-tableHeaderRow: The object has below functions.
+* rowIdx: Current row index of rendering row.
+* children: table header cell elements to render as a children of table header.
+* tableHeaderRow: The object has below functions.
 
 ##### Functions of `tableHeaderRow`
 
-setState: table header row component's setState.
-getState: returns state of table header row component.
-getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
-getTable: returns `table` object to call `setState` or `getState` on it.
+* setState: table header row component's setState.
+* getState: returns state of table header row component.
+* getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
+* getTable: returns `table` object to call `setState` or `getState` on it.
 
 #### Function
 
@@ -140,17 +140,17 @@ const renderTableHeaderCell = (rowIdx, colIdx, tableHeaderCell) => {
 ```
 #### Parameters
 
-rowIdx: Current row index of rendering cell.
-colIdx: Current column index of rendering cell.
-tableHeaderRow: The object has below functions.
+* rowIdx: Current row index of rendering cell.
+* colIdx: Current column index of rendering cell.
+* tableHeaderRow: The object has below functions.
 
 ##### Functions of `tableHeaderCell`
 
-setState: table header cell component's setState.
-getState: returns state of table header cell component.
-getTableHeaderRow: returns `tableHeaderRow` object to call `setState` or `getState` on it.
-getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
-getTable: returns `table` object to call `setState` or `getState` on it.
+* setState: table header cell component's setState.
+* getState: returns state of table header cell component.
+* getTableHeaderRow: returns `tableHeaderRow` object to call `setState` or `getState` on it.
+* getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
+* getTable: returns `table` object to call `setState` or `getState` on it.
 
 #### Example of `setState`
 
@@ -227,8 +227,9 @@ Using above functions we can create `Table` component as below.
   renderTableHeader={renderTableHeader}
   renderTableHeaderRow={renderTableHeaderRow}
   renderTableHeaderCell={renderTableHeaderCell}
+/>
 ```
 
 ### Demo implementation of sub-module.
 
-Go to [demo](https://github.com/frozenarc/react-abstract-table-demo-impl)) to check how we can create sub-module independent of each other
+Go to [demo](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how we can create sub-module independent of each other
