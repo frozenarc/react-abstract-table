@@ -1,7 +1,7 @@
 # react-abstract-table
 Abstract table to extend whatever way
 
-The abstract table still needs below implementation to make itself concrete. The table is flexible enough to accept independent implementation of each.
+The abstract table still needs below sub-module to make itself concrete. The table is flexible enough to accept independent implementation of each.
 
 Rendering: You can use any kind of element or library to render like `<td>`, `<div>`, semantic-ui-react, bootstrap etc.
 
@@ -15,41 +15,178 @@ State management: You can decide which component should contain which kind of st
 
 ### Rendering
 
-There are seven callback functions we need to pass to the `Table` component to achieve rendering.
+There are seven callback functions we need to pass to `Table` component to achieve rendering.
+
+#### Function
 
 ```Javascript
 const renderTable = (children, table) => {
   //return table element with "children" and manange state of table using "table" object
 };
+```
+#### Parameters
 
+children: Array containing table header and table body element to render as a children of table.
+table: Object with functions to get or set state of some component. The object has below functions.
+
+##### Functions of `table`
+
+setState: table component's setState.
+getState: returns state of table component.
+
+#### Function
+
+```Javascript
 const renderTableBody = (children, tableBody) => {
   //return table body element with "children" and manange state of table body or parents using "tableBody" object
 };
+```
+#### Parameters
 
+children: table row elements to render as a children of table body.
+tableBody: The object has below functions.
+
+##### Functions of `tableBody`
+
+setState: table body component's setState.
+getState: returns state of table body component.
+getTable: returns `table` object to call `setState` or `getState` on it.
+
+#### Function
+
+```Javascript
 const renderTableRow = (rowIdx, children, tableRow) => {
   //return table row element at "rowIdx" with "children" and manange state of table row or parents using "tableRow" object
 };
+```
+#### Parameters
 
+rowIdx: Current row index of rendering row.
+children: table cell elements to render as a children of table row.
+tableRow: The object has below functions.
+
+##### Functions of `tableRow`
+
+setState: table row component's setState.
+getState: returns state of table row component.
+getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
+getTable: returns `table` object to call `setState` or `getState` on it.
+
+#### Function
+
+```Javascript
 const renderTableCell = (rowIdx, colIdx, tableCell) => {
   //return table cell element at "rowIdx" and "colIdx" and manange state of table cell or parents using "tableCell" object
 };
+```
+#### Parameters
 
+rowIdx: Current row index of rendering cell.
+colIdx: Current column index of rendering cell.
+tableCell: The object has below functions.
+
+##### Functions of `tableCell`
+
+setState: table cell component's setState.
+getState: returns state of table cell component.
+getTableRow: returns `tableRow` object to call `setState` or `getState` on it.
+getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
+getTable: returns `table` object to call `setState` or `getState` on it.
+
+#### Function
+
+```Javascript
 const renderTableHeader = (children, tableHeader) => {
   //return table header element with "children" and manange state of table header or parents using "tableHeader" object
 };
+```
+#### Parameters
 
-const renderTableHeaderRow = (rowIdx, children, tabl0eHeaderRow) => {
+children: table header row elements to render as a children of table header.
+tableHeader: The object has below functions.
+
+##### Functions of `tableHeader`
+
+setState: table header component's setState.
+getState: returns state of table header component.
+getTable: returns `table` object to call `setState` or `getState` on it.
+
+#### Function
+
+```Javascript
+const renderTableHeaderRow = (rowIdx, children, tableHeaderRow) => {
   //return table header row element at "rowIdx" with "children" and manange state of table header row or parents using "tableHeaderRow" object
 };
+```
+#### Parameters
 
+rowIdx: Current row index of rendering row.
+children: table header cell elements to render as a children of table header.
+tableHeaderRow: The object has below functions.
+
+##### Functions of `tableHeaderRow`
+
+setState: table header row component's setState.
+getState: returns state of table header row component.
+getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
+getTable: returns `table` object to call `setState` or `getState` on it.
+
+#### Function
+
+```Javascript
 const renderTableHeaderCell = (rowIdx, colIdx, tableHeaderCell) => {
   //return table header cell element at "rowIdx" and "colIdx" and manange state of table header cell or parents using "tableHeaderCell" object
+};
+```
+#### Parameters
+
+rowIdx: Current row index of rendering cell.
+colIdx: Current column index of rendering cell.
+tableHeaderRow: The object has below functions.
+
+##### Functions of `tableHeaderCell`
+
+setState: table header cell component's setState.
+getState: returns state of table header cell component.
+getTableHeaderRow: returns `tableHeaderRow` object to call `setState` or `getState` on it.
+getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
+getTable: returns `table` object to call `setState` or `getState` on it.
+
+#### Example of `setState`
+
+Suppose we want to render only cell for some event occurred on that cell. We can do this way.
+
+```Javascript
+const renderTableCell = (rowIdx, colIdx, tableCell) => {
+  return (
+    <td onClick={(e) => { tableCell.setState({ click: true }); }}>test_value</td>
+  );
+};
+```
+
+Now, if we want to render whole row on click event of cell.
+
+```Javascript
+const renderTableCell = (rowIdx, colIdx, tableCell) => {
+  return (
+    <td onClick={(e) => { tableCell.getTableRow().setState({ click: true }); }}>test_value</td>
+  );
+};
+```
+
+And same as to render whole table.
+
+```Javascript
+const renderTableCell = (rowIdx, colIdx, tableCell) => {
+  return (
+    <td onClick={(e) => { tableCell.getTable().setState({ click: true }); }}>test_value</td>
+  );
 };
 ```
 
 ### Data management
 
-There are four callback functions we need to pass to the `Table` component to manage data. `Data management` is direct sub-module but still it is a sub-module of `Rendering` too. Because `react-abstract-table` module just needs row count, column count of body and header. Getting header value and data value would be initiated from `Rendering`.
+There are four callback functions we need to pass to `Table` component to manage data. `Data management` is direct sub-module but still it is a sub-module of `Rendering` too. Because `react-abstract-table` module just needs row count, column count of body and header. Getting header value and data value would be initiated from `Rendering`.
 
 ```Javascript
 const getDataRowCount = () => {
@@ -68,3 +205,30 @@ const getHeaderCellCount = (rowIdx) => {
   //return header cell count at given "rowIdx" of table header
 };
 ```
+
+### State management and Event handling
+
+These are not direct sub-module of `react-abstract-table`. So more detain would be given in [demo implementation example](https://github.com/frozenarc/react-abstract-table-demo-impl).
+
+### Example
+
+Using above functions we can create `Table` component as below.
+
+```Javascript
+<Table
+  getDataRowCount={getDataRowCount}
+  getDataCellCount={getDataCellCount}
+  getHeaderRowCount={getHeaderRowCount}
+  getHeaderCellCount={getHeaderCellCount}
+  renderTable={renderTable}
+  renderTableBody={renderTableBody}
+  renderTableRow={renderTableRow}
+  renderTableCell={renderTableCell}
+  renderTableHeader={renderTableHeader}
+  renderTableHeaderRow={renderTableHeaderRow}
+  renderTableHeaderCell={renderTableHeaderCell}
+```
+
+### Demo implementation of sub-module.
+
+Go to [demo](https://github.com/frozenarc/react-abstract-table-demo-impl)) to check how we can create sub-module independent of each other
