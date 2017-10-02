@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TableHeader from './table-header';
 import TableBody from './table-body';
@@ -43,5 +44,19 @@ class Table extends React.Component {
     return this.props.renderTable([ tableHeader, tableBody ], this.table);
   }
 }
+
+Table.propTypes = {
+  getDataRowCount: PropTypes.func,
+  getDataCellCount: PropTypes.func,
+  getHeaderRowCount: PropTypes.func,
+  getHeaderCellCount: PropTypes.func,
+  renderTable: PropTypes.func,
+  renderTableBody: PropTypes.func,
+  renderTableRow: PropTypes.func,
+  renderTableCell: PropTypes.func,
+  renderTableHeader: PropTypes.func,
+  renderTableHeaderRow: PropTypes.func,
+  renderTableHeaderCell: PropTypes.func
+};
 
 export default Table;

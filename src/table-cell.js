@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class TableCell extends React.Component {
 
@@ -26,4 +27,12 @@ class TableCell extends React.Component {
     return this.props.renderTableCell(rowIdx, colIdx, this.tableCell);
   }
 }
+
+TableCell.propTypes = {
+  tableRow: PropTypes.object,
+  rowIdx: PropTypes.number,
+  colIdx: PropTypes.number,
+  renderTableCell: PropTypes.func
+};
+
 export default TableCell;

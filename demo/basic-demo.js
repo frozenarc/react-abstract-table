@@ -18,7 +18,7 @@ ReactDOM.render(
       return 5;
     }}
     renderTable={(children, table) => {
-      return <table border={"1"} style={{ borderCollapse: "collapse" }}>{children}</table>;
+      return <table style={{ borderCollapse: "collapse" }}>{children}</table>;
     }}
     renderTableBody={(children, tableBody) => {
       return <tbody>{children}</tbody>;

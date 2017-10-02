@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TableHeaderCell from './table-header-cell';
 
@@ -37,6 +38,14 @@ class TableHeaderRow extends React.Component {
     });
     return this.props.renderTableHeaderRow(rowIdx, tableHeaderCells, this.tableHeaderRow);
   }
-
 }
+
+TableHeaderRow.propTypes = {
+  rowIdx: PropTypes.number,
+  tableHeader: PropTypes.object,
+  getHeaderCellCount: PropTypes.func,
+  renderTableHeaderRow: PropTypes.func,
+  renderTableHeaderCell: PropTypes.func,
+};
+
 export default TableHeaderRow;

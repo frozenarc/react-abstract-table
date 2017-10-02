@@ -19,7 +19,8 @@
   "homepage": "https://github.com/frozenarc/react-abstract-table#readme",
   "peerDependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
