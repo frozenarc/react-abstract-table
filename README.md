@@ -1,6 +1,18 @@
 # react-abstract-table
 Abstract table to extend whatever way
 
+### Quick demo
+
+* Clone this repo
+* Run `npm install`
+* Run `npm run start`
+
+### Usage
+
+`npm install --save react-abstract-table`
+
+## Tutorial
+
 The abstract table still needs below sub-modules to make itself concrete. The table is flexible enough to accept independent implementation of each.
 
 Rendering: You can use any kind of element or library to render like `<td>`, `<div>`, semantic-ui-react, bootstrap etc.
@@ -154,7 +166,7 @@ const renderTableHeaderCell = (rowIdx, colIdx, tableHeaderCell) => {
 
 #### Example of `setState`
 
-Suppose we want to render only cell for some event occurred on that cell. We can do this way.
+Suppose we want to render only cell for some event occurred on that cell. We can do it this way.
 
 ```Javascript
 const renderTableCell = (rowIdx, colIdx, tableCell) => {
@@ -206,9 +218,11 @@ const getHeaderCellCount = (rowIdx) => {
 };
 ```
 
+For detail of how we can create the module check [demo implementation](https://github.com/frozenarc/react-abstract-table-demo-impl)
+
 ### State management and Event handling
 
-These are not direct sub-module of `react-abstract-table`. So more detain would be given in [demo implementation example](https://github.com/frozenarc/react-abstract-table-demo-impl).
+These are not direct sub-module of `react-abstract-table`. So more detain would be given in [demo implementation](https://github.com/frozenarc/react-abstract-table-demo-impl).
 
 ### Example
 
@@ -232,4 +246,4 @@ Using above functions we can create `Table` component as below.
 
 ### Demo implementation of sub-module.
 
-Go to [demo](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how we can create sub-module independent of each other
+Go to [demo implementation](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how we can create the sub-modules independent of each other
