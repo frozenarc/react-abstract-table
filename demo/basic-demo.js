@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Table from '../src/index';
 
 ReactDOM.render(
+  <div>
+    <div><h3>Click on table cell to render whole table again</h3></div>
   <Table
     getDataRowCount={() => {
       return 5;
@@ -27,7 +29,18 @@ ReactDOM.render(
       return <tr>{children}</tr>;
     }}
     renderTableCell={(rowIdx, colIdx, tableCell) => {
-      return <td style={{ border: "1px solid black"}}>Value{rowIdx}{colIdx}</td>;
+      return (
+        <td
+          style={{
+            border: "1px solid black",
+            backgroundColor: (tableCell.getTable().getState().rowIdx === rowIdx
+              && tableCell.getTable().getState().colIdx === colIdx
+              && tableCell.getTable().getState().click ? "green" : "white")
+          }}
+          onClick={(e) => { tableCell.getTable().setState({ rowIdx, colIdx, click: true })}}>
+          Value{rowIdx}{colIdx}
+        </td>
+      );
     }}
     renderTableHeader={(children, tableHeader) => {
       return <thead>{children}</thead>;
@@ -38,5 +51,5 @@ ReactDOM.render(
     renderTableHeaderCell={(rowIdx, colIdx, tableHeaderCell) => {
       return <th style={{ border: "1px solid black"}}>Column{rowIdx}{colIdx}</th>;
     }}
-  />,
+  /></div>,
   document.getElementById('app'));
