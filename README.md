@@ -7,6 +7,10 @@ Abstract table to extend whatever way
 * Run `npm install`
 * Run `npm run start`
 
+### Demo with advanced features
+
+[react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl)
+
 ### Usage
 
 `npm install --save react-abstract-table`
@@ -218,11 +222,15 @@ const getHeaderCellCount = (rowIdx) => {
 };
 ```
 
-For detail of how we can create the module check [demo implementation](https://github.com/frozenarc/react-abstract-table-demo-impl)
+For more detail see [react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl)
 
-### State management and Event handling
+### State management
 
-These are not direct sub-module of `react-abstract-table`. So more detain would be given in [demo implementation](https://github.com/frozenarc/react-abstract-table-demo-impl).
+It is a bunch of functions we need to define which can be called from any other three modules to check or set state. The functions should hide state structure.
+
+### Event handling
+
+It is a bunch of specific event handler for components like cell, row, table etc.
 
 ### Example
 
@@ -246,4 +254,4 @@ Using above functions we can create `Table` component as below.
 
 ### Demo implementation of sub-module.
 
-Go to [demo implementation](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how we can create the sub-modules independent of each other
+Go to [react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how we can create the sub-modules independent of each other
