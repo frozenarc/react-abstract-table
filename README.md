@@ -254,4 +254,4 @@ Using above functions we can create `Table` component as below.
 
 ### Demo implementation of sub-module.
 
-Go to [react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how we can create the sub-modules independent of each other
+Go to [react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how to create the sub-modules independent of each other
