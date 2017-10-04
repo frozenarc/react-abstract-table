@@ -20,7 +20,9 @@ ReactDOM.render(
       return 5;
     }}
     renderTable={(children, table) => {
-      return <table style={{ borderCollapse: "collapse" }}>{children}</table>;
+      return <table tabIndex={0} ref={() => {
+          console.log(table.getTableCell(2, 2).getInfo("test"));
+        }} style={{ borderCollapse: "collapse" }}>{children}</table>;
     }}
     renderTableBody={(children, tableBody) => {
       return <tbody>{children}</tbody>;
@@ -37,7 +39,10 @@ ReactDOM.render(
               && tableCell.getTable().getState().colIdx === colIdx
               && tableCell.getTable().getState().click ? "green" : "white")
           }}
-          onClick={(e) => { tableCell.getTable().setState({ rowIdx, colIdx, click: true })}}>
+          onClick={(e) => {
+            tableCell.setInfo("test", "hello2");
+            tableCell.getTable().setState({ rowIdx, colIdx, click: true })
+          }}>
           Value{rowIdx}{colIdx}
         </td>
       );

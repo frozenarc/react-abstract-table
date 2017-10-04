@@ -49,6 +49,14 @@ const renderTable = (children, table) => {
 
 * setState: table component's setState.
 * getState: returns state of table component.
+* setInfo: Using key value pair you can preserve any info. e.g. `table.setInfo('key1', 'value1')`
+* getInfo: Using key you can get preserved info. e.g. `table.getInfo('key1')`
+* getTableHeader: returns `tableHeader` object. e.g. `table.getTableHeader()`
+* getTableHeaderRow: returns `tableHeaderRow` object. e.g. `table.getTableHeaderRow(rowIdx)`
+* getTableHeaderCell: returns `tableHeaderCell` object. e.g. `table.getTableHeaderCell(rowIdx, colIdx)`
+* getTableBody: returns `tableBody` object. e.g. `table.getTableBody()`
+* getTableRow: returns `tableRow` object. e.g. `table.getTableRow(rowIdx)`
+* getTableCell: returns `tableCell` object. e.g. `table.getTableCell(rowIdx, colIdx)`
 
 #### Function
 
@@ -66,7 +74,11 @@ const renderTableBody = (children, tableBody) => {
 
 * setState: table body component's setState.
 * getState: returns state of table body component.
-* getTable: returns `table` object to call `setState` or `getState` on it.
+* setInfo: Using key value pair you can preserve any info. e.g. `tableBody.setInfo('key1', 'value1')`
+* getInfo: Using key you can get preserved info. e.g. `tableBody.getInfo('key1')`
+* getTable: returns `table` object. e.g. `tableBody.getTable()`
+* getTableRow: returns `tableRow` object. e.g. `tableBody.getTableRow(rowIdx)`
+* getTableCell: returns `tableCell` object. e.g. `tableBody.getTableCell(rowIdx, colIdx)`
 
 #### Function
 
@@ -85,8 +97,11 @@ const renderTableRow = (rowIdx, children, tableRow) => {
 
 * setState: table row component's setState.
 * getState: returns state of table row component.
-* getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
-* getTable: returns `table` object to call `setState` or `getState` on it.
+* setInfo: Using key value pair you can preserve any info. e.g. `tableRow.setInfo('key1', 'value1')`
+* getInfo: Using key you can get preserved info. e.g. `tableRow.getInfo('key1')`
+* getTableBody: returns `tableBody` object. e.g. `tableRow.getTableBody()`
+* getTable: returns `table` object. e.g. `tableRow.getTable()`
+* getTableCell: returns `tableCell` object. e.g. `tableRow.getTableCell(colIdx)`
 
 #### Function
 
@@ -105,9 +120,11 @@ const renderTableCell = (rowIdx, colIdx, tableCell) => {
 
 * setState: table cell component's setState.
 * getState: returns state of table cell component.
-* getTableRow: returns `tableRow` object to call `setState` or `getState` on it.
-* getTableBody: returns `tableBody` object to call `setState` or `getState` on it.
-* getTable: returns `table` object to call `setState` or `getState` on it.
+* setInfo: Using key value pair you can preserve any info. e.g. `tableCell.setInfo('key1', 'value1')`
+* getInfo: Using key you can get preserved info. e.g. `tableCell.getInfo('key1')`
+* getTableRow: returns `tableRow` object. e.g. `tableCell.getTableRow()`
+* getTableBody: returns `tableBody` object. e.g. `tableCell.getTableBody()`
+* getTable: returns `table` object. e.g. `tableCell.getTable()`
 
 #### Function
 
@@ -125,7 +142,11 @@ const renderTableHeader = (children, tableHeader) => {
 
 * setState: table header component's setState.
 * getState: returns state of table header component.
-* getTable: returns `table` object to call `setState` or `getState` on it.
+* setInfo: Using key value pair you can preserve any info. e.g. `tableHeader.setInfo('key1', 'value1')`
+* getInfo: Using key you can get preserved info. e.g. `tableHeader.getInfo('key1')`
+* getTable: returns `table` object. e.g. `tableHeader.getTable()`
+* getTableHeaderRow: returns `tableHeaderRow` object. e.g. `tableHeader.getTableHeaderRow(rowIdx)`
+* getTableHeaderCell: returns `tableHeaderCell` object. e.g. `tableHeader.getTableHeaderCell(rowIdx, colIdx)`
 
 #### Function
 
@@ -144,8 +165,11 @@ const renderTableHeaderRow = (rowIdx, children, tableHeaderRow) => {
 
 * setState: table header row component's setState.
 * getState: returns state of table header row component.
-* getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
-* getTable: returns `table` object to call `setState` or `getState` on it.
+* setInfo: Using key value pair you can preserve any info. e.g. `tableHeaderRow.setInfo('key1', 'value1')`
+* getInfo: Using key you can get preserved info. e.g. `tableHeaderRow.getInfo('key1')`
+* getTableHeader: returns `tableHeader`. e.g. `tableHeaderRow.getTableHeader()`
+* getTable: returns `table` object. e.g. `tableHeaderRow.getTable()`
+* getTableHeaderCell: returns `tableHeaderCell` object. e.g. `tableHeader.getTableHeaderCell(colIdx)`
 
 #### Function
 
@@ -164,9 +188,11 @@ const renderTableHeaderCell = (rowIdx, colIdx, tableHeaderCell) => {
 
 * setState: table header cell component's setState.
 * getState: returns state of table header cell component.
-* getTableHeaderRow: returns `tableHeaderRow` object to call `setState` or `getState` on it.
-* getTableHeader: returns `tableHeader` object to call `setState` or `getState` on it.
-* getTable: returns `table` object to call `setState` or `getState` on it.
+* setInfo = Using key value pair you can preserve any info. e.g. `tableHeaderCell.setInfo('key1', 'value1')`
+* getInfo = Using key you can get preserved info. e.g. `tableHeaderCell.getInfo('key1')`
+* getTableHeaderRow: returns `tableHeaderRow` object. e.g. `tableHeaderCell.getTableHeaderRow()`
+* getTableHeader: returns `tableHeader` object. e.g. `tableHeaderCell.getTableHeader()`
+* getTable: returns `table` object. e.g. `tableHeaderCell.getTable()`
 
 #### Example of `setState`
 
