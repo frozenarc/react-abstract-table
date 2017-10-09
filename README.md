@@ -3,9 +3,12 @@ Abstract table to extend whatever way
 
 ### Quick demo
 
-* [Basic demo](file:///F:/javascript/frozenarc.github.io/basic-demo.html)
-* [Advanced demo](file:///F:/javascript/frozenarc.github.io/advanced-demo.html)
-* [Source Code of Advanced Demo](https://github.com/frozenarc/react-abstract-table-demo-impl)
+* [Basic demo](https://frozenarc.github.io/basic-demo.html)
+* [Advanced demo](https://frozenarc.github.io/advanced-demo.html)
+
+### Source Code of Advanced demo
+
+* [react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl)
 
 ### Usage
 
@@ -26,7 +29,7 @@ Abstract table to extend whatever way
   renderTableHeaderCell={renderTableHeaderCell}
 />
 ```
-To check how we should implement passed functions please check detailed tutorial below.
+Please go through below tutorial for detail of functions passed as props.
 
 ## Tutorial
 
