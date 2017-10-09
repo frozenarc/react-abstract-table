@@ -3,17 +3,30 @@ Abstract table to extend whatever way
 
 ### Quick demo
 
-* Clone this repo
-* Run `npm install`
-* Run `npm run start`
-
-### Demo with advanced features
-
-[react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl)
+* [Basic demo](file:///F:/javascript/frozenarc.github.io/basic-demo.html)
+* [Advanced demo](file:///F:/javascript/frozenarc.github.io/advanced-demo.html)
+* [Source Code of Advanced Demo](https://github.com/frozenarc/react-abstract-table-demo-impl)
 
 ### Usage
 
 `npm install --save react-abstract-table`
+
+```Javascript
+<Table
+  getDataRowCount={getDataRowCount}
+  getDataCellCount={getDataCellCount}
+  getHeaderRowCount={getHeaderRowCount}
+  getHeaderCellCount={getHeaderCellCount}
+  renderTable={renderTable}
+  renderTableBody={renderTableBody}
+  renderTableRow={renderTableRow}
+  renderTableCell={renderTableCell}
+  renderTableHeader={renderTableHeader}
+  renderTableHeaderRow={renderTableHeaderRow}
+  renderTableHeaderCell={renderTableHeaderCell}
+/>
+```
+To check how we should implement passed functions please check detailed tutorial below.
 
 ## Tutorial
 
@@ -27,7 +40,7 @@ Event handling: Any kind of event from any component can be fired and you can de
 
 State management: You can decide which component should contain which kind of state to change that state by any events.
 
-`Rendering` and `Data structure` would be direct sub-module of the module. So, let's see how we can achieve rendering.
+`Rendering` and `Data structure` would be direct sub-module of the module.
 
 ### Rendering
 
@@ -102,6 +115,7 @@ const renderTableRow = (rowIdx, children, tableRow) => {
 * getTableBody: returns `tableBody` object. e.g. `tableRow.getTableBody()`
 * getTable: returns `table` object. e.g. `tableRow.getTable()`
 * getTableCell: returns `tableCell` object. e.g. `tableRow.getTableCell(colIdx)`
+* rowIdx: indicates row index for the object.
 
 #### Function
 
@@ -125,6 +139,8 @@ const renderTableCell = (rowIdx, colIdx, tableCell) => {
 * getTableRow: returns `tableRow` object. e.g. `tableCell.getTableRow()`
 * getTableBody: returns `tableBody` object. e.g. `tableCell.getTableBody()`
 * getTable: returns `table` object. e.g. `tableCell.getTable()`
+* rowIdx: indicates row index for the object.
+* colIdx: indicated column index for the object.
 
 #### Function
 
@@ -170,6 +186,7 @@ const renderTableHeaderRow = (rowIdx, children, tableHeaderRow) => {
 * getTableHeader: returns `tableHeader`. e.g. `tableHeaderRow.getTableHeader()`
 * getTable: returns `table` object. e.g. `tableHeaderRow.getTable()`
 * getTableHeaderCell: returns `tableHeaderCell` object. e.g. `tableHeader.getTableHeaderCell(colIdx)`
+* rowIdx: indicates row index for the object.
 
 #### Function
 
@@ -193,6 +210,8 @@ const renderTableHeaderCell = (rowIdx, colIdx, tableHeaderCell) => {
 * getTableHeaderRow: returns `tableHeaderRow` object. e.g. `tableHeaderCell.getTableHeaderRow()`
 * getTableHeader: returns `tableHeader` object. e.g. `tableHeaderCell.getTableHeader()`
 * getTable: returns `table` object. e.g. `tableHeaderCell.getTable()`
+* rowIdx: indicates row index for the object.
+* colIdx: indicated column index for the object.
 
 #### Example of `setState`
 
@@ -257,27 +276,3 @@ It is a bunch of functions we need to define which can be called from any other 
 ### Event handling
 
 It is a bunch of specific event handler for components like cell, row, table etc.
-
-### Example
-
-Using above functions we can create `Table` component as below.
-
-```Javascript
-<Table
-  getDataRowCount={getDataRowCount}
-  getDataCellCount={getDataCellCount}
-  getHeaderRowCount={getHeaderRowCount}
-  getHeaderCellCount={getHeaderCellCount}
-  renderTable={renderTable}
-  renderTableBody={renderTableBody}
-  renderTableRow={renderTableRow}
-  renderTableCell={renderTableCell}
-  renderTableHeader={renderTableHeader}
-  renderTableHeaderRow={renderTableHeaderRow}
-  renderTableHeaderCell={renderTableHeaderCell}
-/>
-```
-
-### Demo implementation of sub-module.
-
-Go to [react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl) to check how to create the sub-modules independent of each other
