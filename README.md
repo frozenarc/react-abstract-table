@@ -63,7 +63,7 @@ const renderTable = (children, table) => {
 
 ##### Functions of `table`
 
-* setState: table component's setState.
+* setState: `Table` component's setState.
 * getState: returns state of table component.
 * setInfo: Using key value pair you can preserve any info. e.g. `table.setInfo('key1', 'value1')`
 * getInfo: Using key you can get preserved info. e.g. `table.getInfo('key1')`
@@ -88,7 +88,7 @@ const renderTableBody = (children, tableBody) => {
 
 ##### Functions of `tableBody`
 
-* setState: table body component's setState.
+* setState: `TableBody` component's setState.
 * getState: returns state of table body component.
 * setInfo: Using key value pair you can preserve any info. e.g. `tableBody.setInfo('key1', 'value1')`
 * getInfo: Using key you can get preserved info. e.g. `tableBody.getInfo('key1')`
@@ -111,7 +111,7 @@ const renderTableRow = (rowIdx, children, tableRow) => {
 
 ##### Functions of `tableRow`
 
-* setState: table row component's setState.
+* setState: `TableRow` component's setState.
 * getState: returns state of table row component.
 * setInfo: Using key value pair you can preserve any info. e.g. `tableRow.setInfo('key1', 'value1')`
 * getInfo: Using key you can get preserved info. e.g. `tableRow.getInfo('key1')`
@@ -135,7 +135,7 @@ const renderTableCell = (rowIdx, colIdx, tableCell) => {
 
 ##### Functions of `tableCell`
 
-* setState: table cell component's setState.
+* setState: `TableCell` component's setState.
 * getState: returns state of table cell component.
 * setInfo: Using key value pair you can preserve any info. e.g. `tableCell.setInfo('key1', 'value1')`
 * getInfo: Using key you can get preserved info. e.g. `tableCell.getInfo('key1')`
@@ -159,7 +159,7 @@ const renderTableHeader = (children, tableHeader) => {
 
 ##### Functions of `tableHeader`
 
-* setState: table header component's setState.
+* setState: `TableHeader` component's setState.
 * getState: returns state of table header component.
 * setInfo: Using key value pair you can preserve any info. e.g. `tableHeader.setInfo('key1', 'value1')`
 * getInfo: Using key you can get preserved info. e.g. `tableHeader.getInfo('key1')`
@@ -182,7 +182,7 @@ const renderTableHeaderRow = (rowIdx, children, tableHeaderRow) => {
 
 ##### Functions of `tableHeaderRow`
 
-* setState: table header row component's setState.
+* setState: `TableHeaderRow` component's setState.
 * getState: returns state of table header row component.
 * setInfo: Using key value pair you can preserve any info. e.g. `tableHeaderRow.setInfo('key1', 'value1')`
 * getInfo: Using key you can get preserved info. e.g. `tableHeaderRow.getInfo('key1')`
@@ -206,7 +206,7 @@ const renderTableHeaderCell = (rowIdx, colIdx, tableHeaderCell) => {
 
 ##### Functions of `tableHeaderCell`
 
-* setState: table header cell component's setState.
+* setState: `TableHeaderCell` component's setState.
 * getState: returns state of table header cell component.
 * setInfo = Using key value pair you can preserve any info. e.g. `tableHeaderCell.setInfo('key1', 'value1')`
 * getInfo = Using key you can get preserved info. e.g. `tableHeaderCell.getInfo('key1')`
