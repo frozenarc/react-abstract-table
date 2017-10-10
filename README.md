@@ -29,8 +29,6 @@ Abstract table to extend whatever way
   renderTableHeaderCell={renderTableHeaderCell}
 />
 ```
-Please go through below tutorial for detail of functions passed as props.
-
 ## Tutorial
 
 The abstract table still needs below sub-modules to make itself concrete. The table is flexible enough to accept independent implementation of each.
@@ -39,9 +37,9 @@ Rendering: You can use any kind of element or library to render like `<td>`, `<d
 
 Data management: The table needs data in some format to represent. Here you can define in any format.
 
-Event handling: Any kind of event from any component can be fired and you can decide which level of rendering you need for that event.
+Event handling: Any kind of event from any component can be fired and you can decide which level of rendering you need for that event. (like row level rendering, whole table level rendering or just cell level rendering)
 
-State management: You can decide which component should contain which kind of state to change that state by any events.
+State management: You can decide which component should contain which kind of state. The state going to be changed by events and would be used to render components.
 
 `Rendering` and `Data structure` would be direct sub-module of the module.
 
@@ -269,8 +267,6 @@ const getHeaderCellCount = (rowIdx) => {
   //return header cell count at given "rowIdx" of table header
 };
 ```
-
-For more detail see [react-abstract-table-demo-impl](https://github.com/frozenarc/react-abstract-table-demo-impl)
 
 ### State management
 
